@@ -8,10 +8,10 @@ namespace AddressBookSystem
     public string Address{get; set;}
     public string City{get; set;}
     public string State{get; set;}
-    public string Zip{get; set;}
-    public string PhoneNumber{get; set;}
+    public int Zip{get; set;}
+    public int PhoneNumber{get; set;}
     public string Email{get; set;}
-    public Contact(string firstname,string lastname,string address,string city,string state,string zip,string phoneNumber,string email)//parameterized constructor
+    public Contact(string firstname,string lastname,string address,string city,string state,int zip,int phoneNumber,string email)//parameterized constructor
         {
             this.FirstName=firstname;
             this.LastName=lastname;  
