@@ -140,5 +140,30 @@ name - Use Console to edit person details*/
             }
         }
 
+        /*Ability to delete a 
+        person using 
+        person's name - Use Console to delete a person*/
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter the First Name of the person you want to delete:");
+            string name = Console.ReadLine() ?? "";
+            bool found = false;
+
+            for (int i = 0; i < contacts.Count; i++)
+            {
+                if (contacts[i].FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                {
+                    found = true;
+                    contacts.RemoveAt(i);
+                    Console.WriteLine("Contact deleted successfully.");
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("Contact not found.");
+            }
+        }
     }
 }
