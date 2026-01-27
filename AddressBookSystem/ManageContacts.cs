@@ -1,21 +1,29 @@
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using System.Linq;
+
 namespace AddressBookSystem
 {
-    
     public class ManageContacts
     {
-         List<Contact> contacts=new List<Contact>();
-         
+        List<Contact> contacts = new List<Contact>();
+
         //method to add contact
         public void Addcontact()
-
         {
             Console.WriteLine("Enter First Name:");
             string firstname = Console.ReadLine() ?? "";
 
             Console.WriteLine("Enter Last Name:");
             string lastname = Console.ReadLine() ?? "";
+
+            // UC 7: Duplicate Check
+            if (contacts.Any(c => c.FirstName.Equals(firstname, StringComparison.OrdinalIgnoreCase) &&
+                                 c.LastName.Equals(lastname, StringComparison.OrdinalIgnoreCase)))
+            {
+                Console.WriteLine($"A contact with the name {firstname} {lastname} already exists in this Address Book.");
+                return;
+            }
 
             Console.WriteLine("Enter Address:");
             string address = Console.ReadLine() ?? "";
