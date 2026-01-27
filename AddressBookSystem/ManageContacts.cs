@@ -165,5 +165,17 @@ name - Use Console to edit person details*/
                 Console.WriteLine("Contact not found.");
             }
         }
+
+        // Method to display all contacts
+        public void DisplayContacts()
+        {
+            if (contacts.Count == 0)
+            {
+                Console.WriteLine("Address Book is empty.");
+                return;
+            }
+            Console.WriteLine("\n--- Contact List ---");
+            contacts.ForEach(c => Console.WriteLine(c.ToString()));
+        }
     }
 }
